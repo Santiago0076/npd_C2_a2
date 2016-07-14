@@ -59,39 +59,57 @@ class Triangle(object):
          self.enemies = enemies
 
      def area(self):
-         formula_triangle = (self.base * self.heigth) / 2
+         a = (self.edge_base * self.edge_heigth) / 2
          return area
 
     def perimeter(self):
-
-        return self.edge = (self_edge_a + self_edge_b + self_edge_c)
+        p = (self_edge_a + self_edge_b + self_edge_c)
+        return perimeter
 
      def update_edge_length(self, new_length):
-         self.edge = new_length
+         self.edge_length = new_length
 
      def add_ally(self, shape_object):
          self.allies.append(shape_object)
 
      def add_enemy(self, shape_object):
          self.enemies.append(shape_object)
-  if __name__ == '__main__':
-     square_marty = Square(5, "marty", [], [])
-     print(triangle.area())
-     print(triangle.update_edge_length(10))
-     print(triangle.area())
+
+if __name__ == '__main__':
+    triangle_equi = Triangle(3, "equi", [], [])
+    print(triangle_equi.area())
+    print(triangle_equi.update_edge_length(6))
+    print(triangle_equi.area())
 
 class Circle(object):
     shape_type = 'circle'
-    def __init__(self, edge_length, allies, enemies):
+    def __init__(radius, edge_length, allies, enemies):
         self.name = name
         self.allies = allies
         self.enemies = enemies
 
-    def area(self):
-        formula_circle = pi * radius**2
-        return area
+    def area(radius):
+        a = math.pi * radius**2
+        return a
 
-    def add_ally
+    def diameter(double_radius)
+        d = radius + radius
+        return d
+
+    def update_edge_length(radius, new_length):
+        radius_length = new_length
+
+    def add_ally(radius, shape_object):
+        radius.allies.append(shape_object)
+
+    def add_enemy(radius, shape_object):
+        radius.enemies.append(shape_object)
+
+if __name__ == '__main__':
+    circle_red = Circle(5, "red", [], [])
+    print(circle_red.area())
+    print(circle_red.update_edge_length(8))
+    print(circle_red.area())
 
 
 
