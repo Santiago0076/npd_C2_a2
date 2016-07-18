@@ -19,11 +19,12 @@ update_edge_lenght
 add_ally
 add_enemy
 '''
+import math
 
 class Square(object):
     shape_type = 'square'
 
-    def __init__(self, edge_length, allies, enemies):
+    def __init__(self, name, edge_length, allies, enemies):
         self.edge_length = edge_length
         self.name = name
         self.allies = allies
@@ -45,42 +46,41 @@ class Square(object):
         self.enemies.append(shape_object)
 
 class Triangle(object):
-    shape_type = 'equilateral'
-    def __init__(self, edge_length, edge_height, allies, enemies):
-         self.edge_length = edge_length
-         self.name = name
-         self.edge_height = edge_height
-         self.allies = allies
-         self.enemies = enemies
+    shape_type = 'triangle'
+    def __init__(self, edge_length, edge_height, name, allies, enemies):
+        self.edge_length = edge_length
+        self.name = name
+        self.edge_height = edge_height
+        self.allies = allies
+        self.enemies = enemies
 
-     def area(self):
-         return 0.5 *(self.edge_length * self.edge_height)
+    def area(self):
+        return 0.5 *(self.edge_length * self.edge_height)
 
     def perimeter(self):
         return self.edge_length * 3
 
-     def update_edge_length(self, new_length):
-         self.edge_length = new_length
+    def update_edge_length(self, new_length):
+        self.edge_length = new_length
 
-     def add_ally(self, shape_object):
-         self.allies.append(shape_object)
+    def add_ally(self, shape_object):
+        self.allies.append(shape_object)
 
-     def add_enemy(self, shape_object):
-         self.enemies.append(shape_object)
+    def add_enemy(self, shape_object):
+        self.enemies.append(shape_object)
 
 class Circle(object):
     shape_type = 'circle'
-    pi = 3.141692
-    def __init__(radius, edge_length, allies, enemies):
+    def __init__(self, name, radius, allies, enemies):
         self.name = name
         self.radius= radius
         self.allies = allies
         self.enemies = enemies
 
     def area(radius):
-        return  pi * self.radius**2
+        return math.pi * self.radius**2
 
-    def diameter(double_radius)
+    def diameter(double_radius):
         return self.radius + self.radius
 
     def update_edge_length(radius, new_length):
